@@ -1,9 +1,10 @@
-def output(s,l):
-    if l == 0:
-       return
-    print (s[l-1],end='')
-    output(s,l-1)
- 
-s = input('Input a string:')
-l = len(s)
-output(s,l)
+num=[];
+# i=2
+for i in range(2,100):
+   # j=2
+   for j in range(2,i):
+      if(i%j==0):
+         break
+   else:
+      num.append(i)
+print(num)
