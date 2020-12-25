@@ -1,10 +1,20 @@
-num=[];
-# i=2
-for i in range(2,100):
-   # j=2
-   for j in range(2,i):
-      if(i%j==0):
-         break
-   else:
-      num.append(i)
-print(num)
+X = [[12,7,3],
+    [4 ,5,6],
+    [7 ,8,9]]
+ 
+Y = [[5,8,1],
+    [6,7,3],
+    [4,5,9]]
+ 
+result = [[0,0,0],
+         [0,0,0],
+         [0,0,0]]
+ 
+# 迭代输出行
+for i in range(len(X)):
+   # 迭代输出列
+   for j in range(len(X[0])):
+       result[i][j] = X[i][j] + Y[i][j]
+ 
+for r in result:
+   print(r)
