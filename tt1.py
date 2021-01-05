@@ -1,18 +1,19 @@
-def my_numbers():
-    a = 10
-    while True:
-        
-        n = a-1
-        a = a * 10
-        yield n
-
-f = my_numbers()
-m = int(input('input a odd number:\n'))
-i = 1
-while i < 2:
-    j = next(f)
-    if j % m != 0:
-        j += 1
-    else:
-        print(j)
-        i += 1
+from sys import stdout
+if __name__ == '__main__':
+    a = int(input('输入四个数字:\n'))
+    aa = []
+    aa.append(a % 10)
+    aa.append(a % 100 // 10)
+    aa.append(a % 1000 // 100)
+    aa.append(a // 1000)
+    print(aa)
+ 
+    for i in range(4):
+        aa[i] += 5
+        aa[i] %= 10
+    print(aa)
+    for i in range(2):
+        aa[i],aa[3 - i] = aa[3 - i],aa[i]
+    print(aa)
+    for i in range(3,-1,-1):
+        stdout.write(str(aa[i]))
